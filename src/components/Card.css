@@ -1,0 +1,62 @@
+.Card {
+    width: 300px;
+    height: 225px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.25);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.Card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+    z-index: 1;
+}
+
+.Card:hover {
+    transform: scale(1.1, 1.1);
+    box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+
+.Card:hover img {
+    transform: translateY(-20px);
+}
+
+.Card img {
+    position: absolute;
+    top: 0;
+    height: 110%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.Card h3 {
+    color: white;
+    font-family: Merriweather;
+    font-size: 24px;
+    margin: 20px 0 0 20px;
+    width: 190px;
+    position: relative;
+    z-index: 2;
+}
+
+.Card p {
+    color: rgba(255,255,255,.8);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    align-self: end;
+    margin: 0 0 20px 20px;
+    position: relative;
+    z-index: 2;
+}
